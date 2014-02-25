@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>CardSys</id>
+    <version>1.0.3</version>
+    <authors>gdurgha</authors>
+    <owners>gdurgha</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>CardSys Test Project</description>
+  </metadata>
+</package>

@@ -1,0 +1,12 @@
+﻿@using WebGrease
+@model Pickem.Model.ViewModel.Home.BrowseTeamsViewModel
+@{
+    ViewBag.Title = "Teams";
+}
+
+<div class="row">
+    @foreach (var team in Model.Teams)
+    {
+        @Html.DisplayFor(m => team, "Team")
+    }
+</div>
