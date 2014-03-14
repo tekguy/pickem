@@ -1,12 +1,26 @@
-﻿@using WebGrease
-@model Pickem.Model.ViewModel.Home.BrowseTeamsViewModel
+﻿@model Pickem.Model.ViewModel.Home.BrowseTeamsViewModel
 @{
     ViewBag.Title = "Teams";
 }
 
 <div class="row">
-    @foreach (var team in Model.Teams)
-    {
-        @Html.DisplayFor(m => team, "Team")
-    }
+    <div class="col-lg-12">
+        <div ng-app="app" ng-controller="ListTeams">
+            <div ui-view></div>
+            <p>Total number of teams: {{teams.length}}</p>
+        </div>
+    </div>
 </div>
+@section scripts
+{
+    <script type="text/javascript">
+        var app = angular.module('app', []);
+        
+        function ListTeams($scope, $http) {
+            $http.get('/api/team').
+                success(function (data) {
+                    $scope.teams = data;
+                });
+        }
+    </script>
+}

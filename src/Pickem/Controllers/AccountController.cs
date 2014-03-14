@@ -8,17 +8,17 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
-using Pickem.Data;
 using Pickem.Model;
 using Pickem.Model.ViewModel.Account;
 using Pickem.Security;
+using Pickem.Service.Interface;
 
 namespace Pickem.Controllers
 {
     [Authorize]
     public partial class AccountController : BaseController
     {
-        public AccountController(IDataSourceFactory dataSourceFactory) : base(dataSourceFactory)
+        public AccountController()
         {
             UserManager = new PickemUserManager<UserAccount>(new PickemUserStore<UserAccount>());
         }

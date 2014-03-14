@@ -1,17 +1,17 @@
 ﻿using System.Linq;
 using System.Web.Http;
 using Pickem.Model;
+using Pickem.Service.Interface;
 
 namespace Pickem.Controllers.Api
 {
     public class VoteController : BaseApiController
     {
-        
         [Route("api/vote/getweek")]
         // GET api/<controller>
         public Week GetWeek()
         {
-            return GetActiveWeek();
+            return new Week();
         }
 
 
@@ -34,15 +34,6 @@ namespace Pickem.Controllers.Api
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
-        }
-
-        private Week GetActiveWeek()
-        {
-            using (var db = DataSourceFactory.GetDbContext())
-            {
-                var week = db.Week.Include("Games").Include("Games.HomeTeam").Include("Games.VisitorTeam").FirstOrDefault();
-                return week;
-            }
         }
     }
 }

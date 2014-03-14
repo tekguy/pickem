@@ -1,15 +1,18 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Web.Http;
+using System.Web.Http.Results;
 using Microsoft.Practices.ServiceLocation;
-using Pickem.Data;
+using Pickem.Service.Interface;
 
 namespace Pickem.Controllers.Api
 {
     public class BaseApiController : ApiController
     {
-        public BaseApiController()
+        public IServiceContext ServiceContext { get { return ServiceLocator.Current.GetInstance<IServiceContext>(); } }
+        public ExceptionResult HandleException(Exception ex)
         {
-            DataSourceFactory = ServiceLocator.Current.GetInstance<IDataSourceFactory>();
+            //todo: log error
+            return InternalServerError(ex);
         }
-        public IDataSourceFactory DataSourceFactory { get; set; }
     }
 }
