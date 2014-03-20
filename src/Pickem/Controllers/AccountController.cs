@@ -16,7 +16,7 @@ using Pickem.Service.Interface;
 namespace Pickem.Controllers
 {
     [Authorize]
-    public partial class AccountController : BaseController
+    public partial class AccountController : Controller
     {
         public AccountController()
         {

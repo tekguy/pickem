@@ -9,40 +9,16 @@ using Pickem.Service.Interface;
 
 namespace Pickem.Controllers
 {
-    public partial class HomeController : BaseController
+    public partial class HomeController : Controller
     {
-        public HomeController()
-        {
-            
-        }
+        /// <summary>
+        /// The only MVC page needed!
+        /// </summary>
+        /// <returns></returns>
         public virtual ActionResult Index()
         {
             return View();
         }
-
-
-        public virtual ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-        public virtual ActionResult Teams()
-        {
-            var model = new BrowseTeamsViewModel();
-            return View(model);
-        }
-
-        //public ActionResult Vote()
-        //{
-        //    var model = new VoteViewModel();
-        //    using (var db = DataSourceFactory.GetDbContext())
-        //    {
-        //        model.GameWeek = GetActiveWeek();
-        //    }
-        //    return View(model);
-        //}
 
     }
 }

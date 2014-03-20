@@ -1,10 +1,11 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
-<div class="jumbotron">
-    <h1>NFL PickEm</h1>
-    <p class="lead">This web application was developed by <a href="http://gordondurgha.com" target="_blank">Gordon Durgha</a> as a tool to choose pickems weekly with friends during the NFL season.</p>
-</div>
-<div class="row">
+<div ng-controller="mainController">
+    <div id="main">
+        <div ng-view></div>
+        <pre>$location.path() = {{$location.path()}}</pre>
+        <pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>
+        <pre>$route.current.params = {{$route.current.params}}</pre>
+    </div>
 </div>
