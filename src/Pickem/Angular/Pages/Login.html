@@ -1,0 +1,28 @@
+﻿<h3>Login</h3>
+<p>This is a simple SPA application developed by Gordon Durgha.</p>
+<div class="row">
+    <div class="col-lg-6">
+        <form name="loginForm" ng-submit="login(credentials)" role="form">
+            <div class="form-group">
+                Username:
+                <input type="text" id="username" class="form-control" ng-model="credentials.username">
+            </div>
+            <div class="form-group">
+                Password:
+                <input type="text" id="username" class="form-control" ng-model="credentials.password">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="form-control btn btn-primary">Login</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-6">
+        <div ng-if="currentUser">Welcome, {{ currentUser.name }}</div>
+        <div ng-if="isAuthorized(userRoles.admin)">You're admin.</div>
+        <div ng-switch on="currentUser.role">
+            <div ng-switch-when="userRoles.admin">You're admin.</div>
+            <div ng-switch-when="userRoles.editor">You're editor.</div>
+            <div ng-switch-default>You're something else.</div>
+        </div>
+    </div>
+</div>

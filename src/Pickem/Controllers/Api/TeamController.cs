@@ -10,7 +10,7 @@ namespace Pickem.Controllers.Api
             try
             {
                 var teams = ServiceContext.TeamService.NflTeams();
-                return InternalServerError();
+                return Ok(teams);
             }
             catch (Exception ex)
             {

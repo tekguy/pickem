@@ -215,6 +215,7 @@
   <ItemGroup>
     <Content Include="Angular\Pages\Home.html" />
     <Content Include="Angular\Pages\About.html" />
+    <Content Include="Angular\Pages\Login.html" />
     <Content Include="Angular\Pages\Team.html" />
     <Content Include="Angular\Pages\Teams.html" />
     <Content Include="Angular\Templates\Team.html" />
